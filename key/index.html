@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DARLING KEY</title>
+    <link rel="icon" type="image/x-icon" href="./image/icon.ico">
+</head>
+<!-- ĐỊT MẸ MÀY THẰNG MẶT CẶC NÀO ĐỊNH LẤY CODE CỦA BỐ -->
+<body>
+    <div>
+        CHỈ CÓ SV MỚI CHÔM CODE BỐ
+    </div> 
+    <iframe id="key" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
+</body>
+<script>
+    function getParameterByName(name, url = window.location.href) {
+        name = name.replace(/[\[\]]/g, '\\$&');
+        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, ' '));
+    }
+    var key = getParameterByName('key')
+    document.getElementById('key').src = './xyz.html?key=' + key
+</script>
+<style>
+    .scrollbar {
+        background-color: #F5F5F5;
+        float: left;
+        height: 300px;
+        margin-bottom: 25px;
+        margin-left: 22px;
+        margin-top: 40px;
+        width: 65px;
+        overflow-y: scroll;
+    }
+
+    .force-overflow {
+        min-height: 450px;
+    }
+
+    #style-1::-webkit-scrollbar {
+        width: 6px;
+        background-color: #F5F5F5;
+    } 
+    #style-1::-webkit-scrollbar-thumb {
+        background-color: #000000;
+    }
+    #style-1::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        background-color: #F5F5F5;
+    }
+</style>
+</html>
